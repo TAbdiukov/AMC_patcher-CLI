@@ -1,0 +1,12 @@
+Party,URL,What for,Changes done
+WARNING,The listing isn't always up-to date,,
+Nir Sofer,http://nirsoft.mirrorz.com,CLI Original AMC GUI code
+N/A,https://forums.windowssecrets.com/showthread.php/28214-counting-array-elements-(vb6),How to count arrays in VB6,N/A
+N/A,https://social.msdn.microsoft.com/Forums/sqlserver/en-US/d6e76731-8e3b-465f-9d5a-12c6498d6b6c/how-to-return-exit-code-from-vb6-form?forum=winforms,Exit process in VB6,N/A
+Jason Isaacs (lazyjay),http://vbcity.com/forums/t/5084.aspx,Unix timestamp in VB6,N/A
+paper1111 & JOAN,https://stackoverflow.com/a/52406421,Unix timestamp in VB6,N/A
+Santosh Visal,https://www.codeproject.com/Articles/23234/VB6-Save-Form-Image-To-File,VB6 alternative Winapi approach to save form to image,None
+Codemaker,https://stackoverflow.com/a/51016198,How to switch-case in VB6,N/A
+G Mastros,https://stackoverflow.com/a/9068210,Is debugger prevent trick in VB6,None
+Anonymous,http://www.freevbcode.com/ShowCode.asp?ID=6324,HEX to RGB in VB6,slightly modified for performance
+Nir Sofer,http://nirsoft.mirrorz.com,CLI IO for VB6,Added a few functions
