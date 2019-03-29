@@ -41,14 +41,18 @@ Private Sub Form_Load()
         If (IsNumeric(last_arg)) Then
             last_arg_int = CInt(last_arg)
             
-            path = Right(TrimArg, Len(TrimArg) - Len(last_arg) - 1)
+            path = Left(TrimArg, Len(TrimArg) - Len(last_arg) - 1)
             path = Replace(path, Chr(34), "")
-            
+
+            CLI.Sendln "Path: " + path
+            CLI.Sendln "Arg: " + last_arg
+
             ' PROCESS
             Dim buf As Integer
             buf = ChangeMode(path, last_arg_int)
             
             ' OUTPUT
+
             AMC.output_result last_arg_int, buf
             quit buf
         Else

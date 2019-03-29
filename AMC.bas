@@ -223,7 +223,6 @@ Public Sub output_result(ByVal res As Integer, ByVal iError As Integer)
         output_err GetErrorDesc(iError)
     End If
     
-    CLI.Sendln ""
 End Sub
 
 Public Function quit(code As Integer)
