@@ -1,4 +1,4 @@
-# AppModeChanger patcher - CLI v1.1
+# AppModeChanger patcher - CLI
 
 Patches the app's SUBSYSTEM flag to change its behaviour
 
