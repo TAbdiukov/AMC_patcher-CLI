@@ -86,155 +86,153 @@ Public VER As String
 Public DEBUGGER As Boolean
 
 Public SUBSYSTEMS() As Variant
-Public SUBSYSTEM_INVALID_NAME As String
-Public SUBSYSTEM_INVALID_DESC As String
-Public Function Subsys_construct(ByVal ID As Integer, Name As String, Desc As String) As String
-    Subsys_construct = CStr(ID) + " " + Name + " " + Desc
+Public Const SUBSYSTEM_INVALID_NAME As String = "?"
+Public Const SUBSYSTEM_INVALID_DESC As String = "No description"
+
+Public Function subsys_construct(ByVal ID As Integer, Name As String, Desc As String) As String
+ subsys_construct = CStr(ID) + " " + Name + " " + Desc
 End Function
 
 
 
 Public Function setup()
-    APP_NAME = "AMC Patcher CLI"
-    VER = CStr(App.Major) + "." + CStr(App.Minor)
-    DEBUGGER = GetRunningInIDE()
-    
-    ' ftp://www.esrf.eu/scisoft/GrWinlib/CURRENT/GrWinTk/src/CheckUI.c
-    ' http://eljay.github.io/directx-sys/winapi/winnt/
-    ' https://ebourg.github.io/jsign/apidocs/src-html/net/jsign/pe/Subsystem.html
-    
-    ' Application Modes:
-    ' Has to be in the chronological ascending order by design
-    SUBSYSTEMS = Array( _
-        Subsys_construct(0, "UNKNOWN", "Unknown system"), _
-        Subsys_construct(1, "NATIVE", "Image doesn't require a subsystem"), _
-        Subsys_construct(2, "WINDOWS_GUI", "Image runs in the Windows GUI subsystem"), _
-        Subsys_construct(3, "WINDOWS_CUI", "Image runs in the Windows CLI subsystem (console)"), _
-        Subsys_construct(4, "?", "No description"), _
-        Subsys_construct(5, "OS2_CUI", "image runs in the OS/2 character subsystem"), _
-        Subsys_construct(6, "?", "No description"), _
-        Subsys_construct(7, "POSIX_CUI", "image runs in the Posix character subsystem"), _
-        Subsys_construct(8, "NATIVE_WINDOWS", "image is a native Win9x driver"), _
-        Subsys_construct(9, "WINDOWS_CE_GUI", "Image runs in the Windows CE subsystem"), _
-        Subsys_construct(10, "EFI_APPLICATION", "An Extensible Firmware Interface (EFI) application"), _
-        Subsys_construct(11, "EFI_BOOT_SERVICE_DRIVER", "An EFI driver with boot services"), _
-        Subsys_construct(12, "EFI_RUNTIME_DRIVER", "An EFI driver with run-time services"), _
-        Subsys_construct(13, "EFI_ROM", "An EFI ROM image"), _
-        Subsys_construct(14, "IMAGE_SUBSYSTEM_XBOX", "No description"), _
-        Subsys_construct(15, "?", "No description"), _
-        Subsys_construct(16, "IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION", "No description") _
-    )
-
-    SUBSYSTEM_INVALID_NAME = "?"
-    SUBSYSTEM_INVALID_DESC = "No description"
+ APP_NAME = "AMC Patcher CLI"
+ VER = App.Major & "." & App.Minor & App.Revision
+ DEBUGGER = GetRunningInIDE()
+ 
+ ' ftp://www.esrf.eu/scisoft/GrWinlib/CURRENT/GrWinTk/src/CheckUI.c
+ ' http://eljay.github.io/directx-sys/winapi/winnt/
+ ' https://ebourg.github.io/jsign/apidocs/src-html/net/jsign/pe/subsystem.html
+ 
+ ' Application Modes:
+ ' Has to be in the chronological ascending order by design
+ SUBSYSTEMS = Array( _
+  subsys_construct(0, "UNKNOWN", "Unknown system"), _
+  subsys_construct(1, "NATIVE", "Image doesn't require a subsystem"), _
+  subsys_construct(2, "WINDOWS_GUI", "Image runs in the Windows GUI subsystem"), _
+  subsys_construct(3, "WINDOWS_CUI", "Image runs in the Windows CLI subsystem (console)"), _
+  subsys_construct(4, "?", "No description"), _
+  subsys_construct(5, "OS2_CUI", "image runs in the OS/2 character subsystem"), _
+  subsys_construct(6, "?", "No description"), _
+  subsys_construct(7, "POSIX_CUI", "image runs in the Posix character subsystem"), _
+  subsys_construct(8, "NATIVE_WINDOWS", "image is a native Win9x driver"), _
+  subsys_construct(9, "WINDOWS_CE_GUI", "Image runs in the Windows CE subsystem"), _
+  subsys_construct(10, "EFI_APPLICATION", "An Extensible Firmware Interface (EFI) application"), _
+  subsys_construct(11, "EFI_BOOT_SERVICE_DRIVER", "An EFI driver with boot services"), _
+  subsys_construct(12, "EFI_RUNTIME_DRIVER", "An EFI driver with run-time services"), _
+  subsys_construct(13, "EFI_ROM", "An EFI ROM image"), _
+  subsys_construct(14, "IMAGE_SUBSYSTEM_XBOX", "No description"), _
+  subsys_construct(15, "?", "No description"), _
+  subsys_construct(16, "IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION", "No description") _
+ )
 End Function
 
 ' return something from the number
-Public Function Subsys_ret(ByVal i As Integer) As String
-    If (i <= (UBound(SUBSYSTEMS) - LBound(SUBSYSTEMS))) Then
-        Subsys_ret = SUBSYSTEMS(i)
-    Else
-        Subsys_ret = Subsys_construct(i, SUBSYSTEM_INVALID_NAME, SUBSYSTEM_INVALID_DESC)
-    End If
+Public Function subsys_ret(ByVal i As Integer) As String
+ If (i <= (UBound(SUBSYSTEMS) - LBound(SUBSYSTEMS))) Then
+  subsys_ret = SUBSYSTEMS(i)
+ Else
+  subsys_ret = subsys_construct(i, SUBSYSTEM_INVALID_NAME, SUBSYSTEM_INVALID_DESC)
+ End If
 End Function
 
 Private Function GetErrorDesc(iError As Integer) As String
-    Select Case iError
-        Case ERROR_CANNOT_WRITE_FILE
-            GetErrorDesc = "Cannot write to the file"
-        
-        Case ERROR_BAD_FILE_FORMAT
-            GetErrorDesc = "Bad file format"
-        
-        Case ERROR_CANNOT_READ_FILE
-            GetErrorDesc = "Cannot read from the file"
-        
-        Case ERROR_CANNOT_OPEN_FILE
-            GetErrorDesc = "Cannot open the file"
-    End Select
+ Select Case iError
+  Case ERROR_CANNOT_WRITE_FILE
+   GetErrorDesc = "Cannot write to the file"
+  
+  Case ERROR_BAD_FILE_FORMAT
+   GetErrorDesc = "Bad file format"
+  
+  Case ERROR_CANNOT_READ_FILE
+   GetErrorDesc = "Cannot read from the file"
+  
+  Case ERROR_CANNOT_OPEN_FILE
+   GetErrorDesc = "Cannot open the file"
+ End Select
 End Function
 
 Public Function ChangeMode(sFilename As String, iAppMode As Integer) As Integer
-    Dim hFile           As Long
-    Dim iError          As Integer
-    Dim buffer(1024)    As Byte
-    Dim lBytesReadWrite As Long
-    Dim lPELocation     As Long
-    
-    ' just to be safe
-    iError = 0
-    
-    'Open the file with Win32 API call
-    hFile = CreateFile(sFilename, _
-    GENERIC_READ Or GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0)
-    If hFile <> INVALID_HANDLE_VALUE Then
-        'Read the Dos header.
-        If ReadFile(hFile, buffer(0), &H40, lBytesReadWrite, 0) <> 0 Then
-            If buffer(0) = &H4D And buffer(1) = &H5A Then
-                'Get the location of the portable executable header.
-                CopyMemory lPELocation, buffer(&H3C), 4
-                If lPELocation = 0 Then
-                    iError = ERROR_BAD_FILE_FORMAT
-                Else
-                    SetFilePointer hFile, lPELocation, ByVal 0, FILE_BEGIN
-                    'Read the portable executable signature.
-                    If ReadFile(hFile, buffer(0), 2, lBytesReadWrite, 0) <> 0 Then
-                        'Check the signature.
-                        If buffer(0) = &H50 And buffer(1) = &H45 Then
-                            buffer(0) = iAppMode
-                            SetFilePointer hFile, lPELocation + &H5C, ByVal 0, FILE_BEGIN
-                            'Change the byte in the executable file to the desired application mode.
-                            If WriteFile(hFile, buffer(0), 1, lBytesReadWrite, 0) = 0 Then
-                                iError = ERROR_CANNOT_WRITE_FILE
-                            End If
-                            
-                        Else
-                            iError = ERROR_BAD_FILE_FORMAT
-                        End If
-                    Else
-                        iError = ERROR_CANNOT_READ_FILE
-                    End If
-                End If
-                
-            Else
-                iError = ERROR_BAD_FILE_FORMAT
-            End If
-        Else
-            iError = ERROR_CANNOT_READ_FILE
-        End If
-                
-        'Close the file
-        CloseHandle hFile
+ Dim hFile     As Long
+ Dim iError    As Integer
+ Dim buffer(1024) As Byte
+ Dim lBytesReadWrite As Long
+ Dim lPELocation  As Long
+ 
+ ' just to be safe
+ iError = 0
+ 
+ 'Open the file with Win32 API call
+ hFile = CreateFile(sFilename, _
+ GENERIC_READ Or GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0)
+ If hFile <> INVALID_HANDLE_VALUE Then
+  'Read the Dos header.
+  If ReadFile(hFile, buffer(0), &H40, lBytesReadWrite, 0) <> 0 Then
+   If buffer(0) = &H4D And buffer(1) = &H5A Then
+    'Get the location of the portable executable header.
+    CopyMemory lPELocation, buffer(&H3C), 4
+    If lPELocation = 0 Then
+     iError = ERROR_BAD_FILE_FORMAT
     Else
-        iError = ERROR_CANNOT_OPEN_FILE
+     SetFilePointer hFile, lPELocation, ByVal 0, FILE_BEGIN
+     'Read the portable executable signature.
+     If ReadFile(hFile, buffer(0), 2, lBytesReadWrite, 0) <> 0 Then
+      'Check the signature.
+      If buffer(0) = &H50 And buffer(1) = &H45 Then
+       buffer(0) = iAppMode
+       SetFilePointer hFile, lPELocation + &H5C, ByVal 0, FILE_BEGIN
+       'Change the byte in the executable file to the desired application mode.
+       If WriteFile(hFile, buffer(0), 1, lBytesReadWrite, 0) = 0 Then
+        iError = ERROR_CANNOT_WRITE_FILE
+       End If
+       
+      Else
+       iError = ERROR_BAD_FILE_FORMAT
+      End If
+     Else
+      iError = ERROR_CANNOT_READ_FILE
+     End If
     End If
-    ChangeMode = iError
+    
+   Else
+    iError = ERROR_BAD_FILE_FORMAT
+   End If
+  Else
+   iError = ERROR_CANNOT_READ_FILE
+  End If
+    
+  'Close the file
+  CloseHandle hFile
+ Else
+  iError = ERROR_CANNOT_OPEN_FILE
+ End If
+ ChangeMode = iError
 End Function
 
 Public Sub output_err(errMsg As String)
-    CLI.Sendln "Error: " & errMsg
+ CLI.Sendln "Error: " & errMsg
 End Sub
 
 Public Sub output_result(ByVal res As Integer, ByVal iError As Integer)
-    If iError = 0 Then
-        CLI.Sendln "Success. The application mode was successfully changed to"
-        CLI.Sendln Subsys_ret(res)
-    Else
-        output_err GetErrorDesc(iError)
-    End If
-    
+ If iError = 0 Then
+  CLI.Sendln "Success. The application mode was successfully changed to"
+  CLI.Sendln subsys_ret(res)
+ Else
+  output_err GetErrorDesc(iError)
+ End If
+ 
 End Sub
 
 Public Function quit(code As Integer)
-    On Error Resume Next
+ On Error Resume Next
 
-    CLI.Send vbNewLine
+ CLI.Send vbNewLine
 
-    If DEBUGGER Then
-        Debug.Print "End"
-    Else
-        ExitProcess code
-    End If
+ If DEBUGGER Then
+  Debug.Print "End"
+ Else
+  ExitProcess code
+ End If
 End Function
 
 ' https://stackoverflow.com/a/9068210
@@ -246,7 +244,7 @@ End Function
 
 ' https://stackoverflow.com/a/9068210
 Private Function TestIDE(x As Long) As Boolean
-    x = 1
+ x = 1
 End Function
 
 
