@@ -9,7 +9,8 @@ There's an amazing Nirsoft VB snippet of AppModeChanger that does not support CL
 
 Note that if you make changes to the AMC code and compile it, you'd need another copy of AMC, either CLI or GUI, to patch for it to work. Further explained in the **How to compile** section.
 
-Pen icon icon by Icons8
+Insulin Pen icon icon by Icons8
+
 ( although I have the Icons8 licence from github 2019, best safe than sorry)
 
 ## Usage:
