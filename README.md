@@ -66,8 +66,8 @@ Insulin Pen icon icon by Icons8
 		amc "path_to_my_new_amc_exe" 3
 6. Done!
 
-## How to patch (copy-paste from my Stackoverflow answer)
-
+## How to turn your VB6 app into console/CLI
+#### (copy-paste from my Stackoverflow answer)
 
 1. Clone the repo,
 2. Copy `CLI.bas` to your project, then add `CLI.bas` to your project. Now you can use the CLI functions. For example
