@@ -50,21 +50,25 @@ Insulin Pen icon icon by Icons8
             * 14 IMAGE_SUBSYSTEM_XBOX No description
             * 16 IMAGE_SUBSYSTEM_WINDOWS_BOOT_APPLICATION No description
 
-
-## How to compile?
-
+## How to compile
 1. *[Recommended for compatibility]* Get a Windows XP VM
-2. Get a **Microsoft Visual Basic 6.0** 
+2. Get **Microsoft Visual Basic 6.0** 
 
-***Tip:** I unofficially recommend a portable version sticking around on BT, as you won't have to mess around with the installation and registry. Plus, it's only a few megabytes. Check out **Portable Microsoft Visual Basic 6.0 SP6***
+	* **Tip:** There is is a portable build, only a few megabytes. Look up <ins>Portable Microsoft Visual Basic 6.0 SP6</ins>
 
-3. Fire up **Microsoft Visual Basic 6.0**, open up the project.
-4. Go to File -> Make *.exe -> Save
+3. Start **Microsoft Visual Basic 6.0**, open up the project.
+4. Go to File → Make *.exe → Save
+5. Patch the app for CLI use:
+	* You can use my [AMC patcher](https://github.com/TAbdiukov/AMC_patcher-CLI). For example,
 
-5. Due to the "[chicken&egg problem](https://en.wikipedia.org/wiki/Bootstrapping_(compilers))" present here, you will have to patch the app with either its other pre-compiled AMC copy or the original NirSoft's GUI [Application Mode Changer](http://www.nirsoft.net/vb/console.zip) ([info](http://www.nirsoft.net/vb/console.html)). By calling:
-
+		```
 		amc "path_to_my_new_amc_exe" 3
+		```
+		
+	* Or you can use the original Nirsoft's [Application Mode Changer](http://www.nirsoft.net/vb/console.zip) ([docs](http://www.nirsoft.net/vb/console.html)), unpack the archive and then run **appmodechange.exe**
+
 6. Done!
+
 
 ## How to turn your VB6 app into console/CLI
 #### (copy-paste from my Stackoverflow answer)
