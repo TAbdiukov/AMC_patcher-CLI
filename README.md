@@ -1,7 +1,11 @@
-# AppModeChanger patcher - CLI
+# amc
+*AppModeChanger patcher - CLI*
 
 ![HMM](icons8-insulin-pen-90.png)
 Patches the app's SUBSYSTEM flag to change its behaviour
+
+[![Download](https://img.shields.io/badge/download-success?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TAbdiukov/AMC_patcher-CLI/releases/download/1.12/amc.exe)
+
 
 ## Trivia
 
