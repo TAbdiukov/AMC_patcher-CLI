@@ -98,8 +98,7 @@ Where `"C:/Projects/My supa CLI project/Project1.exe"` - Is the path to your app
 Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy
 
 ## See also
-
-My other small Windows tools,
+*My other small Windows tools,*
 
 * [AMC_patcher-CLI](https://github.com/TAbdiukov/AMC_patcher-CLI) – (CLI) Patches app's SUBSYSTEM flag to modify app's behavior.
 * [exe2wordsize](https://github.com/TAbdiukov/exe2wordsize) – (CLI) Detects Windows-compatible application bitness, without ever running it.
