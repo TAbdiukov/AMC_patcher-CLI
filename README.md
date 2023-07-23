@@ -74,10 +74,10 @@ Insulin Pen icon icon by Icons8
 
 
 ## How to turn your VB6 app into console/CLI
-#### (copy-paste from my Stackoverflow answer)
+#### (based on my Stackoverflow answer)
 
-1. Clone the repo,
-2. Copy `CLI.bas` to your project, then add `CLI.bas` to your project. Now you can use the CLI functions. For example
+1. Clone this repo,
+2. Copy `CLI.bas` to your project, then add `CLI.bas` to your project. Now you can use the CLI functions. For example,
 
 ```
 CLI.setup ' required line, to set up variables
@@ -88,14 +88,14 @@ CLI.sendln "maybe another line, why not?"
 ```
 
 3. Now you can use these functions if your code. *Make sure to call `CLI.setup` first.* I'd recommend for the first time, just test the functionality in `Form1_Load()`
-4. Compile your executable via VB6 suite, but this isn't the end of the story
-5. Your compiled app has to be patched to work in command-line mode. To do so, `CD` into `AMC_patcher-CLI` folder you called and perform
+4. Compile your executable via VB6 suite, but this isn't the end of the story.
+5. Your compiled app has to be patched to work in command-line mode. To do so, `CD` into `AMC_patcher-CLI` folder you called and perform.
 
         amc "C:/Projects/My supa CLI project/Project1.exe" 3
 
 Where `"C:/Projects/My supa CLI project/Project1.exe"` - Is the path to your app EXE
 
-Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy
+Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy.
 
 ## See also
 *My other small Windows tools,*  
