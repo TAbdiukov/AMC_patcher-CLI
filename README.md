@@ -1,7 +1,7 @@
 # AppModeChanger patcher - CLI
 
 ![HMM](icons8-insulin-pen-90.png)
-Patches the app's SUBSYSTEM flag to change app's behaviour
+Patches app's SUBSYSTEM flag to modify app's behavior
 
 [![Download](https://img.shields.io/badge/download-success?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TAbdiukov/AMC_patcher-CLI/releases/download/1.12/amc.exe)
 
@@ -96,4 +96,3 @@ CLI.sendln "maybe another line, why not?"
 Where `"C:/Projects/My supa CLI project/Project1.exe"` - Is the path to your app EXE
 
 Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy
-
