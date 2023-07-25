@@ -1,5 +1,6 @@
-# ![HMM](icons8-insulin-pen-90.png) AppModeChanger patcher - CLI
+# AppModeChanger patcher - CLI
 
+![HMM](icons8-insulin-pen-90.png)
 Patches app's SUBSYSTEM flag to modify app's behavior.
 
 [![Download](https://img.shields.io/badge/download-success?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TAbdiukov/AMC_patcher-CLI/releases/download/1.12/amc.exe)
@@ -10,10 +11,6 @@ Patches app's SUBSYSTEM flag to modify app's behavior.
 There's an amazing Nirsoft VB snippet of AppModeChanger that does not support CLI usage (unless you want to mess with hotkeys, which is not a stable solution). I rewrote the code for command-line usage, but then turns out Nirsoft don't use any Git repos anywhere (from what I could see) I'd have to just host code and stuff here. The name was trunkated to *amc* for the easier CLI usage
 
 Note that if you make changes to the AMC code and compile it, you'd need another copy of AMC, either CLI or GUI, to patch for it to work. Further explained in the **How to compile** section.
-
-Insulin Pen icon icon by Icons8
-
-( although I have the Icons8 licence from github 2019, best safe than sorry)
 
 ## Usage:
 ![Nirsoft original screenshot](https://www.nirsoft.net/vb/console1.gif)
@@ -95,6 +92,12 @@ CLI.sendln "maybe another line, why not?"
 Where `"C:/Projects/My supa CLI project/Project1.exe"` - Is the path to your app EXE
 
 Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy.
+
+## Acknowledgements
+
+* Insulin Pen icon icon by [Icons8](https://icons8.com)
+    * Although I have their subscription, better safe than sorry
+
 
 ## See also
 *My other small Windows tools,*  
