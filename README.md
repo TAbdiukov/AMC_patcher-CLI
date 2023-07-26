@@ -20,10 +20,10 @@ Note that if you make changes to the AMC code and compile it, you'd need another
 
 ### Examples:
 
-	amc "C:/Projects/My supa CLI project/Project1.exe" 3 
+	amc "C:/Projects/My CLI project/Project1.exe" 3 
 (to set the Project1 application to the CLI mode), or
 
-	amc "C:/Projects/My crazy CLI project converted to XBOX GUI/app.exe" 14
+	amc "C:/Projects/My CLI project converted to XBOX GUI/app.exe" 14
 (to convert the app.exe to XBOX GUI app
 
 ## Manual:
@@ -84,12 +84,12 @@ CLI.sendln "maybe another line, why not?"
 ```
 
 3. Now you can use these functions if your code. *Make sure to call `CLI.setup` first.* I'd recommend for the first time, just test the functionality in `Form1_Load()`
-4. Compile your executable via VB6 suite, but this isn't the end of the story.
+4. Compile your executable via VB6 suite, but the process is not finished yet.
 5. Your compiled app has to be patched to work in command-line mode. To do so, `CD` into `AMC_patcher-CLI` folder you called and perform.
 
-        amc "C:/Projects/My supa CLI project/Project1.exe" 3
+        amc "C:/Projects/My CLI project/Project1.exe" 3
 
-Where `"C:/Projects/My supa CLI project/Project1.exe"` - Is the path to your app EXE
+Where `"C:/Projects/My CLI project/Project1.exe"` - Is the path to your app EXE
 
 Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy.
 
@@ -97,7 +97,6 @@ Or alternatively for the patching step, use [Nirsoft's original GUI patcher impl
 
 * Insulin Pen icon icon by [Icons8](https://icons8.com)
     * Although I have their subscription, better safe than sorry
-
 
 ## See also
 *My other small Windows tools,*  
