@@ -95,7 +95,7 @@ Or alternatively for the patching step, use [Nirsoft's original GUI patcher impl
 
 ## Acknowledgements
 
-* Insulin Pen icon icon by [Icons8](https://icons8.com)
+* Insulin Pen icon by [Icons8](https://icons8.com)
     * Although I have their subscription, better safe than sorry
 
 ## See also
