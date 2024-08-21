@@ -8,9 +8,9 @@ Patches app's SUBSYSTEM flag to modify app's behavior.
 
 ## Trivia
 
-There's an amazing Nirsoft VB snippet of AppModeChanger that does not support CLI usage (unless you want to mess with hotkeys, which is not a stable solution). I rewrote the code for command-line usage, but then turns out Nirsoft don't use any Git repos anywhere (from what I could see) I'd have to just host code and stuff here. The name was trunkated to *amc* for the easier CLI usage
+There is an amazing Nirsoft VB snippet of AppModeChanger that does not support CLI usage (unless you want to use hotkeys, which is not a scalable solution). I rewrote the code for command-line usage. The name was truncated to *amc* for the easier CLI usage
 
-Note that if you make changes to the AMC code and compile it, you'd need another copy of AMC, either CLI or GUI, to patch for it to work. Further explained in the **How to compile** section.
+As explained in the **How to compile** section, if you make changes to the AMC code, then after compiling another copy of AMC is needed, either CLI or GUI, to patch it to work.
 
 ## Usage:
 ![Nirsoft original screenshot](https://www.nirsoft.net/vb/console1.gif)
@@ -24,7 +24,7 @@ Note that if you make changes to the AMC code and compile it, you'd need another
 (to set the Project1 application to the CLI mode), or
 
 	amc "C:/Projects/My CLI project converted to XBOX GUI/app.exe" 14
-(to convert the app.exe to XBOX GUI app
+(to convert the app.exe to XBOX GUI app)
 
 ## Manual:
     <path_to_app> - Path to your executable. "-tolerable
@@ -53,12 +53,12 @@ Note that if you make changes to the AMC code and compile it, you'd need another
 1. *[Recommended for compatibility]* Get a Windows XP VM
 2. Get **Microsoft Visual Basic 6.0** 
 
-	* **Tip:** There is is a portable build, only a few megabytes. Look up <ins>Portable Microsoft Visual Basic 6.0 SP6</ins>
+	* **Tip:** There is a portable build, only a few megabytes. Look up <ins>Portable Microsoft Visual Basic 6.0 SP6</ins>
 
-3. Start **Microsoft Visual Basic 6.0**, open up the project.
+3. Start **Microsoft Visual Basic 6.0**, open the project.
 4. Go to File → Make *.exe → Save
 5. Patch the app for CLI use:
-	* You can use my [AMC patcher](https://github.com/TAbdiukov/AMC_patcher-CLI). For example,
+	* You can use this [AMC patcher](https://github.com/TAbdiukov/AMC_patcher-CLI). For example,
 
 		```
 		amc "path_to_my_new_amc_exe" 3
@@ -83,7 +83,7 @@ CLI.sendln "Orange foobar!"
 CLI.sendln "maybe another line, why not?"
 ```
 
-3. Now you can use these functions if your code. *Make sure to call `CLI.setup` first.* I'd recommend for the first time, just test the functionality in `Form1_Load()`
+3. Now you can use these functions if your code. *Make sure to call `CLI.setup` first.* First time? You can just test the functionality in `Form1_Load()`
 4. Compile your executable via VB6 suite, but the process is not finished yet.
 5. Your compiled app has to be patched to work in command-line mode. To do so, `CD` into `AMC_patcher-CLI` folder you called and perform.
 
