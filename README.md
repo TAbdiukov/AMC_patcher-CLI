@@ -1,4 +1,4 @@
-# AppModeChanger patcher - CLI
+# AppModeChanger patcher – CLI
 
 ![HMM](icons8-insulin-pen-90.png)
 Patches app's SUBSYSTEM flag to modify app's behavior.
@@ -8,7 +8,7 @@ Patches app's SUBSYSTEM flag to modify app's behavior.
 
 ## Trivia
 
-There is an amazing Nirsoft VB snippet of AppModeChanger that does not support CLI usage (unless you want to use hotkeys, which is not a scalable solution). I rewrote the code for command-line usage. The name was truncated to *amc* for the easier CLI usage
+There is an amazing Nirsoft VB snippet of AppModeChanger that does not support CLI usage (unless you want to use hotkeys, which is not a scalable solution). I rewrote the code for command-line usage. The name was truncated to *amc* for the easier CLI usage.
 
 As explained in the **How to compile** section, if you make changes to the AMC code, then after compiling another copy of AMC is needed, either CLI or GUI, to patch it to work.
 
@@ -27,9 +27,9 @@ As explained in the **How to compile** section, if you make changes to the AMC c
 (to convert the app.exe to XBOX GUI app)
 
 ## Manual:
-    <path_to_app> - Path to your executable. "-tolerable
+    <path_to_app> – Path to your executable. "-tolerable
 
-    <new_mode> - New app SUBSYSTEM mode to set
+    <new_mode> – New app SUBSYSTEM mode to set
     
     Informally, one'd need to only know of modes: 2 (CLI) and 3 (GUI)
     
@@ -89,7 +89,7 @@ CLI.sendln "maybe another line, why not?"
 
         amc "C:/Projects/My CLI project/Project1.exe" 3
 
-Where `"C:/Projects/My CLI project/Project1.exe"` - Is the path to your app EXE
+Where `"C:/Projects/My CLI project/Project1.exe"` – is the path to your application .exe
 
 Or alternatively for the patching step, use [Nirsoft's original GUI patcher implementation](http://www.nirsoft.net/vb/console.zip). It is less scalable, but just as sturdy.
 
