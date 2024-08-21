@@ -21,10 +21,10 @@ As explained in the **How to compile** section, if you make changes to the AMC c
 ### Examples:
 
 	amc "C:/Projects/My CLI project/Project1.exe" 3 
-(to set the Project1 application to the CLI mode), or
+to set the Project1 application to the CLI mode, or
 
 	amc "C:/Projects/My CLI project converted to XBOX GUI/app.exe" 14
-(to convert the app.exe to XBOX GUI app)
+to convert the app.exe to XBOX GUI app
 
 ## Manual:
     <path_to_app> – Path to your executable. "-tolerable
@@ -72,7 +72,7 @@ As explained in the **How to compile** section, if you make changes to the AMC c
 ## How to turn your VB6 app into console/CLI
 #### (based on my Stackoverflow answer)
 
-1. Clone this repo,
+1. Clone this repo.
 2. Copy `CLI.bas` to your project, then add `CLI.bas` to your project. Now you can use the CLI functions. For example,
 
 ```
