@@ -103,5 +103,5 @@ Or alternatively for the patching step, use [Nirsoft's original GUI patcher impl
 
 * **<ins>AMC_patcher-CLI</ins>** – (CLI) Patches app's SUBSYSTEM flag to modify app's behavior.
 * [exe2wordsize](https://github.com/TAbdiukov/exe2wordsize) – (CLI) Detects Windows-compatible application bitness, without ever running it.
-* [SCAPTURE.EXE](https://github.com/TAbdiukov/SCAPTURE.EXE) – (GUI) Simple screen-capturing tool for embedded systems.
+* [SCAPTURE](https://github.com/TAbdiukov/SCAPTURE) – (GUI) Simple screen-capturing tool for embedded systems.
 * [txtShear](https://github.com/TAbdiukov/txtShear) – (CLI) Fast engine to skew (or shear) text by a desired angle, emulating handwriting.
